@@ -75,7 +75,8 @@ export default function Livros() {
 
         <table style={{
             width: '100%',
-            maxWidth: '900px',
+            maxWidth: '1200px',
+            textAlign: "center",
             borderCollapse: 'collapse',
             backgroundColor: '#1f1f1f',
             boxShadow: '0 0 10px rgba(0,0,0,0.5)'

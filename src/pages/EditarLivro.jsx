@@ -26,7 +26,7 @@ export default function EditarLivro() {
     .then(res => {
       const livro = res.data;
       setTitulo(livro.titulo ?? "");
-      setAnoPublicacao(livro.ano_publicacao ?? "");
+      setAnoPublicacao(livro.anoPublicacao ?? "");
       setIsbn(livro.isbn ?? "");
       setAutorId(livro.autor?.id?.toString() ?? "");
       setEditoraId(livro.editora?.id?.toString() ?? "");
@@ -43,10 +43,10 @@ export default function EditarLivro() {
 
     const livroAtualizado = {
       titulo,
-      anoPublicacao,
+      anoPublicacao: parseInt(anoPublicacao),
       isbn,
-      autor: { id: autorId },
-      editora: { id: editoraId }
+      autor: { id: parseFloat(autorId) },
+      editora: { id: parseFloat(editoraId) }
     };
 
     try {

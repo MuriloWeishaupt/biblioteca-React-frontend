@@ -31,14 +31,18 @@ export default function CadastroLivro() {
 
         const novoLivro = {
             titulo,
-            anoPublicacao,
+            anoPublicacao: parseInt(anoPublicacao),
             isbn,
-            autor: { id: autorId },
-            editora: { id: editoraId }
+            autor: { id: parseFloat(autorId) },
+            editora: { id: parseFloat(editoraId) }
         };
 
         try {
             await api.post("/livros", novoLivro);
+            if (isNaN(parseInt(anoPublicacao))) {
+                alert("Ano de publicação inválido!");
+                return;
+            }
             alert("Livro cadastrado com sucesso!");
             navigate("/livros");
         } catch (err) {
@@ -79,7 +83,7 @@ export default function CadastroLivro() {
                 />
 
                 <input
-                    type="text"
+                    type="number"
                     placeholder="Ano de Publicação"
                     value={anoPublicacao}
                     onChange={(e) => setAnoPublicacao(e.target.value)}
