@@ -9,6 +9,7 @@ export default function EditarLivro() {
   const [titulo, setTitulo] = useState("");
   const [autorId, setAutorId] = useState("");
   const [editoraId, setEditoraId] = useState("");
+  const [genero, setGenero] = useState("");
   const [anoPublicacao, setAnoPublicacao] = useState("");
   const [isbn, setIsbn] = useState("");
   const [autores, setAutores] = useState([]);
@@ -30,6 +31,7 @@ export default function EditarLivro() {
       setIsbn(livro.isbn ?? "");
       setAutorId(livro.autor?.id?.toString() ?? "");
       setEditoraId(livro.editora?.id?.toString() ?? "");
+      setGenero(livro.genero ?? "");
     })
     .catch(err => {
       console.error(err);
@@ -45,6 +47,7 @@ export default function EditarLivro() {
       titulo,
       anoPublicacao: parseInt(anoPublicacao),
       isbn,
+      genero,
       autor: { id: parseFloat(autorId) },
       editora: { id: parseFloat(editoraId) }
     };
@@ -87,6 +90,23 @@ export default function EditarLivro() {
           required
           style={inputStyle}
         />
+
+        <select
+          value={genero}
+          onChange={(e) => setGenero(e.target.value)}
+          required
+          style={inputStyle}
+        >
+          <option value="">Selecione o Gênero</option>
+          <option value="Romance">Romance</option>
+          <option value="Ficção">Ficção</option>
+          <option value="Fantasia">Fantasia</option>
+          <option value="Terror">Terror</option>
+          <option value="Aventura">Aventura</option>
+          <option value="História">História</option>
+          <option value="Biografia">Biografia</option>
+          <option value="Poesia">Poesia</option>
+        </select>
 
         <input
           type="text"
@@ -154,3 +174,4 @@ const buttonStyleBack = {
   fontSize: "16px",
   cursor: "pointer"
 };
+

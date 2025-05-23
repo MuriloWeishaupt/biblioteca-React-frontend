@@ -13,6 +13,7 @@ export default function Header() {
             textAlign: "center"
         }}>
             <h2 style={{ margin: 0 }}>Biblioteca Digital</h2>
+            <br />
 
             <div style={{  }}>
             <button
@@ -20,7 +21,7 @@ export default function Header() {
                 style={{
                     padding: "10px 20px",
                     marginBottom: "20px",
-                    backgroundColor: "#4CAF50",
+                    backgroundColor: "#07304a",
                     color: "#fff",
                     border: "none",
                     borderRadius: "8px",
@@ -33,7 +34,7 @@ export default function Header() {
                 style={{
                     padding: "10px 20px",
                     marginBottom: "20px",
-                    backgroundColor: "#4CAF50",
+                    backgroundColor: "#07304a",
                     color: "#fff",
                     border: "none",
                     borderRadius: "8px",
@@ -46,7 +47,7 @@ export default function Header() {
                 style={{
                     padding: "10px 20px",
                     marginBottom: "20px",
-                    backgroundColor: "#4CAF50",
+                    backgroundColor: "#07304a",
                     color: "#fff",
                     border: "none",
                     borderRadius: "8px",

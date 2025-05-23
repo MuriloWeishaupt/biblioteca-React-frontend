@@ -52,7 +52,7 @@ export default function Livros() {
             borderRadius: '8px',
             marginBottom: '2rem'
         }}>
-            Biblioteca Digital
+            Bibliotech
         </h1>
 
         
@@ -74,8 +74,8 @@ export default function Livros() {
         <h2 style={{ marginBottom: '1rem' }}>Lista de Livros</h2>
 
         <table style={{
-            width: '100%',
-            maxWidth: '1200px',
+            width: '110%',
+            maxWidth: '1400px',
             textAlign: "center",
             borderCollapse: 'collapse',
             backgroundColor: '#1f1f1f',
@@ -85,6 +85,7 @@ export default function Livros() {
             <tr>
                 <th style={{ padding: '10px', textAlign: 'left' }}>Títulos</th>
                 <th>Autor</th>
+                <th>Gênero</th>
                 <th>Editora</th>
                 <th>Ano</th>
                 <th>ISBN</th>
@@ -96,6 +97,7 @@ export default function Livros() {
                 <tr key={livro.id} style={{ borderBottom: '1px solid #ccc' }}>
                 <td style={{ padding: '10px' }}>{livro.titulo}</td>
                 <td>{livro.autor?.nome}</td>
+                <td>{livro.genero}</td>
                 <td>{livro.editora?.nome}</td>
                 <td>{livro.anoPublicacao}</td>
                 <td>{livro.isbn}</td>
